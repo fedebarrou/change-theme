@@ -33,15 +33,6 @@ const ThemeProvider = ({ children }) => {
   const toggleTheme = () => setTheme(t => (t === 'light' ? 'dark' : 'light'));
 
 
-  //Usse effect obtiene valor de storage
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(THEME_STORAGE_KEY);
-      if (saved === "dark" || saved === "light") setTheme(saved);
-    } catch { }
-  }, []);
-
-
   //effect al modificarse theme
   useEffect(() => {
     document.documentElement.classList.remove("light", "dark");
